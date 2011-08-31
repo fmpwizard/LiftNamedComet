@@ -1,0 +1,20 @@
+This project is a library that aims at making the use of
+named comet actors in Lift a little easier.
+
+You will need to clone this project and using sbt you will do:
+
+sbt update +publish local
+
+That command will compile the library and publish it to
+your local computer.
+
+Then on your lift project you can add the dependency as:
+
+val namedCometActor= "fmpwizard" %% "lift-named-comet" % "0.1"
+
+For a sample project using this library visit:
+https://github.com/fmpwizard/lift_named_comet
+
+Enjoy
+
+  Diego
