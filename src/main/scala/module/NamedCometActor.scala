@@ -1,9 +1,10 @@
 package com.fmpwizard.cometactor.pertab
 package namedactor
 
-import net.liftweb.common.Logger
-import net.liftweb.http.CometActor
-import net.liftweb.common.Full
+import net.liftweb._
+import common.{Full,Logger}
+import http.CometActor
+import util.Helpers._
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,4 +33,8 @@ trait NamedCometActor extends CometActor with Logger{
     CometListerner.listenerFor(name) ! unregisterCometActor(this)
     super.localShutdown()
   }
+
+  // time out the comet actor if it hasn't been on a page for 2 minutes
+  override def lifespan = Full(120 seconds)
+
 }

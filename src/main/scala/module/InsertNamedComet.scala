@@ -34,7 +34,7 @@ trait InsertNamedComet {
   lazy val name= net.liftweb.util.Helpers.nextFuncName
 
 
-  def render(xhtml: NodeSeq): NodeSeq = {
+  final def render(xhtml: NodeSeq): NodeSeq = {
     for (sess <- S.session) sess.sendCometActorMessage(
       cometClass, Full(name), CometName(name)
     )
