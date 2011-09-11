@@ -5,14 +5,6 @@ import net.liftweb.http.CometActor
 import net.liftweb.common.Box
 
 /**
- * Created by IntelliJ IDEA.
- * User: Diego Medina
- * Date: 8/7/11
- * Time: 9:38 PM
- */
-
-
-/**
  * These are the message we pass around to
  * register each named comet actor with a dispatcher that
  * only updates the specific version it monitors

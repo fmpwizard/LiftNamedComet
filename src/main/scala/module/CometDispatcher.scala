@@ -5,18 +5,9 @@ import net.liftweb.actor.LiftActor
 import net.liftweb.http.CometActor
 import net.liftweb.common.{Full, Box, Logger}
 
-/**
- * Created by IntelliJ IDEA.
- * User: Diego Medina
- * Date: 7/25/11
- * Time: 4:33 AM
- */
-
-
 
 /**
  * This class keeps a list of comet actors that need to update the UI
- * if we get new data through the rest api
  */
 class CometDispatcher(version: Box[String]) extends LiftActor  with Logger{
 
@@ -59,5 +50,3 @@ class CometDispatcher(version: Box[String]) extends LiftActor  with Logger{
   }
 
 }
-
-

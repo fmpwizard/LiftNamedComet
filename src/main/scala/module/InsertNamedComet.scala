@@ -1,12 +1,6 @@
 package com.fmpwizard.cometactor.pertab
 package namedactor
 
-/**
- * User: Diego Medina
- * Date: 7/24/11
- * Time: 11:46 PM
- */
-
 import scala.xml.NodeSeq
 import net.liftweb.http.S
 import net.liftweb.common.Full
@@ -21,6 +15,7 @@ import net.liftweb.common.Full
  * lazy val name.
  * If you want the same actor on some of the tabs, and you have a
  * specific value to group them, override lazy val name
+ * override lazy val name= S.param("q")
  *
  *
  */

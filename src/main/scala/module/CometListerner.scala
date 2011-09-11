@@ -4,12 +4,6 @@ package namedactor
 import net.liftweb.actor.LiftActor
 import net.liftweb.common.{Box, Logger}
 
-/**
- * Created by IntelliJ IDEA.
- * User: Diego Medina
- * Date: 7/25/11
- * Time: 12:01 AM
- */
 
 /**
  * Maintain a Map[Value the actor monitors -> Ref to the Actor Dispatcher]
