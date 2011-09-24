@@ -16,7 +16,6 @@ trait NamedCometActor extends CometActor with Logger{
    */
   override  def localSetup = {
     CometListerner.listenerFor(name) ! registerCometActor(this, name)
-    info("====>>>>>>>>>> %s".format(name))
     super.localSetup()
   }
 
