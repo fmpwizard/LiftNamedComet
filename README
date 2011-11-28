@@ -10,7 +10,7 @@ your local computer.
 
 Then on your lift project you can add the dependency as:
 
-val namedCometActor= "fmpwizard" %% "lift-named-comet" % "0.1"
+val namedCometActor= "fmpwizard" %% "lift-named-comet" % "0.2"
 
 For a sample project using this library visit:
 https://github.com/fmpwizard/lift_named_comet
