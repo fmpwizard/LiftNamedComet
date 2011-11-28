@@ -32,6 +32,9 @@ class CometDispatcher(version: Box[String]) extends LiftActor  with Logger{
       info("after %s".format(cometActorsToUpdate))
     }
 
+    //Catch the dummy message we send on comet creation
+    case CometName(name) => 
+
     /**
      * Go through the the list of actors and send them a cellToUpdate message
      */
