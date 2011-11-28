@@ -1,9 +1,9 @@
 This project is a library that aims at making the use of
 named comet actors in Lift a little easier.
 
-You will need to clone this project and using sbt you will do:
+You will need to clone this project and using sbt 0.7.x you will do:
 
-sbt update +publish local
+sbt +update +publish-local
 
 That command will compile the library and publish it to
 your local computer.

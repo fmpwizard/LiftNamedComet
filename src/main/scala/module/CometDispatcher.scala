@@ -9,9 +9,9 @@ import net.liftweb.common.{Full, Box, Logger}
 /**
  * This class keeps a list of comet actors that need to update the UI
  */
-class CometDispatcher(version: Box[String]) extends LiftActor  with Logger{
+class CometDispatcher(name: Box[String]) extends LiftActor  with Logger{
 
-  info("DispatcherActor got version: %s".format(version))
+  info("DispatcherActor got name: %s".format(name))
   private var cometActorsToUpdate: List[CometActor]= List()
 
   override def messageHandler  = {
@@ -36,19 +36,14 @@ class CometDispatcher(version: Box[String]) extends LiftActor  with Logger{
     case CometName(name) => 
 
     /**
-     * Go through the the list of actors and send them a cellToUpdate message
+     * Go through the list of actors and send them a message
      */
     case msg => {
-    	/**
-    	 * BUG: We traverse the list twice, once for the log, and a second time to 
-    	 * send the actual message.
-    	 */
-      cometActorsToUpdate.foreach( actr =>
-      info("We will update this comet actor: %s showing version: %s".format(
-        actr, version))
-      )
-
-      cometActorsToUpdate.foreach(_ ! msg)
+      cometActorsToUpdate.foreach{ x => {
+      	x ! msg
+      	info("We will update this comet actor: %s showing name: %s".format(x, name))
+        }
+      }
     }
   }
 
