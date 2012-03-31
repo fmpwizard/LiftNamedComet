@@ -2,6 +2,8 @@ organization := "fmpwizard"
 
 name         := "Lift Named Comet"
 
+organization := "com.fmpwizard"
+
 version      := "0.2-SNAPSHOT"
 
 crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.8.2", "2.8.1")
@@ -12,14 +14,35 @@ scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "UTF-8", "-optim
 
 libraryDependencies := Seq(
   "net.liftweb"    %% "lift-webkit"    % "2.4"   % "compile",
-  "ch.qos.logback" % "logback-classic" % "1.0.0" % "compile->default",
-  "org.slf4j"      % "jcl-over-slf4j"  % "1.6.1" % "compile->default"
+  "ch.qos.logback" % "logback-classic" % "1.0.0" % "compile",
+  "org.slf4j"      % "jcl-over-slf4j"  % "1.6.1" % "compile"
 )
 
-resolvers   := Seq("Element Nexus"     at "http://maven.element.hr/nexus/content/groups/public")
+publishMavenStyle := true
 
-publishTo   := Some("Element 3rd party" at "http://maven.element.hr/nexus/content/repositories/thirdparty/")
+publishTo <<= version { (v: String) =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
 
-credentials += Credentials(Path.userHome / ".publish" / "element.credentials")
+pomIncludeRepository := { _ => false }
 
-publishArtifact in (Compile, packageDoc) := false
+licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+
+homepage := Some(url("https://github.com/fmpwizard/LiftNamedComet"))
+
+pomExtra := (
+  <scm>
+    <url>git@github.com:fmpwizard/LiftNamedComet.git</url>
+    <connection>scm:git:git@github.com:fmpwizard/LiftNamedComet.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>fmpwizard</id>
+      <name>Diego Medina</name>
+      <url>http://www.fmpwizard.com</url>
+    </developer>
+  </developers>)
