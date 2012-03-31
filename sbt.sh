@@ -1,1 +1,0 @@
-java  -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=556m  -Xmx2024M -jar `dirname $0`/project/strap/sbt-launch-0.11.2.jar "$@"

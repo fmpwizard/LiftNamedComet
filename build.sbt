@@ -4,7 +4,7 @@ name         := "Lift Named Comet"
 
 organization := "com.fmpwizard"
 
-version      := "0.2-SNAPSHOT"
+version      := "0.3"
 
 crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.8.2", "2.8.1")
 
