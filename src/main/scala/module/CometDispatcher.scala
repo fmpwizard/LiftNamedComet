@@ -33,15 +33,15 @@ class CometDispatcher(name: Box[String]) extends LiftActor  with Logger{
     }
 
     //Catch the dummy message we send on comet creation
-    case CometName(name) => 
+    case CometName(name) =>
 
     /**
      * Go through the list of actors and send them a message
      */
     case msg => {
       cometActorsToUpdate.foreach{ x => {
-      	x ! msg
-      	info("We will update this comet actor: %s showing name: %s".format(x, name))
+        x ! msg
+        info("We will update this comet actor: %s showing name: %s".format(x, name))
         }
       }
     }

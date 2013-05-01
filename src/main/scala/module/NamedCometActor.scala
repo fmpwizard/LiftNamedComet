@@ -19,9 +19,9 @@ trait NamedCometActor extends CometActor with Logger{
     super.localSetup()
   }
 
-	/**
-	 * We remove the comet from the map of registers actors
-	 */
+  /**
+   * We remove the comet from the map of registers actors
+   */
   override  def localShutdown = {
     CometListerner.listenerFor(name) ! unregisterCometActor(this)
     super.localShutdown()
