@@ -1,3 +1,20 @@
+## Update
+
+This library/module was integrated into Lift core on version 2.5. I hope to write an upgrade doc soon, but in the meantime, 
+
+the file names you'll need to use are:
+
+```
+NamedCometActorSnippet.scala  //have your snippet (the ones that adds the comet to the page) extend this
+NamedCometActorTrait.scala //have your comet class extend this
+NamedCometListener.scala //this is the singleton with useful methods to get the list of comet actors
+
+```
+
+Thanks
+
+
+
 This project is a library that aims at making the use of
 named comet actors in Lift a little easier.
 
